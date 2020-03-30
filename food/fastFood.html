@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Decide For Me</title>
+</head>
+<body>
+<link ref = "stylesheet" href="../styles.css">
+<div class = "all-buttons-container">
+    <span>
+        <button class="btn btn-2 btn-2c" onclick="chooseFood('all')">All Fast Food</button>
+    </span>
+    <span>
+        <button class="btn btn-2 btn-2c" onclick="chooseFood('Burger')">Burgers</button>
+    </span>
+    <span>
+        <button class="btn btn-2 btn-2c" onclick="chooseFood('Sandwich')">Sandwiches</button>
+    </span>
+    <span>
+        <button class="btn btn-2 btn-2c" onclick="chooseFood('Wing')">Wings</button>
+    </span>
+     <span>
+        <button class="btn btn-2 btn-2c" onclick="chooseFood('Mexican')">Mexican</button>
+    </span>
+</div>
+<div class="result">
+    <p id="result-span">placeholder</p>
+</div>
+
+<script>
+
+var mexicanOptions = ["Chipotle", "California Tortilla", "Qdoba"];
+var sandwichOptions = ["Jimmy Johns", "Potbelly", "Jersey Mikes", "Firehouse Subs", "Popeyes", "Chick fil a"];
+var burgerOptions = ["Habit Burger Grill"];
+var wingOptions = ["Wingstop", "Buffalo Wild Wings"];
+var all = mexicanOptions + sandwichOptions + burgerOptions + wingOptions;
+function chooseFood(category){
+    if(category === "Mexican"){
+    console.log(mexicanOptions);
+    var randomNumber = Math.floor(Math.random() * mexicanOptions.length);
+    result = mexicanOptions[randomNumber];
+    console.log(result);
+    document.getElementById('result-span').innerHTML = "my result";
+    } else if(category === "Sandwhich"){
+    var randomNumber = Math.floor(Math.random() * sandwichOptions.length);
+    result = sandwichOptions[randomNumber];
+    document.getElementById('result-span').innerHTML = result;
+    } else if(category === "Burger"){
+    var randomNumber = Math.floor(Math.random() * burgerOptions.length);
+    result = burgerOptions[randomNumber];
+    console.log(result);
+    document.getElementById('result-span').attribute = result;
+    } else if(category === "Wing"){
+    var randomNumber = Math.floor(Math.random() * wingOptions.length);
+    document.getElementById('result-span').innerHTML = wingOptions[randomNumber];
+    } else
+    var randomNumber = Math.floor(Math.random() * all.length);
+    document.getElementById('result-span').innerHTML = all[randomNumber];
+}
+
+
+</script>
+</body>
+
+</html>
